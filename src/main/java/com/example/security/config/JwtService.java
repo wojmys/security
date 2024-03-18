@@ -42,7 +42,7 @@ public class JwtService
                  .setSubject(userDetails.getUsername())
                  .setIssuedAt(new Date(System.currentTimeMillis()))
                  .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) // 24 hours + 1000 milliseconds valid
-                 .signWith(getSigninKey(), SignatureAlgorithm.ES256)
+                 .signWith(getSigninKey(), SignatureAlgorithm.HS256)
                  .compact();
    }
 
